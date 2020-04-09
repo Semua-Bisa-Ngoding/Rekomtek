@@ -18,6 +18,16 @@ module.exports = (err, req, res, next) => {
         error.message = 'Only admin can change!'
         throw error
 
+      case 'NotFoundError':
+        error.statusCode = 404
+        error.message = 'Data not found!'
+        throw error
+
+      case 'UnauthorizeError':
+        error.statusCode = 401
+        error.message = 'Unauthorize!'
+        throw error
+
       default:
         error.statusCode = 500
         error.message = err.message

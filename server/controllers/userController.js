@@ -10,7 +10,7 @@ class UserController {
         phone: req.body.phone,
         username: req.body.username,
         password: req.body.password,
-        role: req.body.password
+        role: req.body.role
       }
       const user = await User.create(newUser)
       res.status(201).json(user)

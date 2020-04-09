@@ -9,7 +9,7 @@ const PengaduanSchema = new Schema({
     default: Date.now()
   },
   deskripsi: String,
-  userId: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
