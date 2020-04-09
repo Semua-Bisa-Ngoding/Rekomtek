@@ -18,7 +18,8 @@ if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
 
 mongoose.connect(mongodb + dbName, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 })
   .then(success => {
     console.log('connected on MongoDB ' + mongodb + dbName)

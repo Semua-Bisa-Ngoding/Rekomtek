@@ -8,7 +8,9 @@ module.exports = async (req, res, next) => {
       const error = { name: "NotFoundError" }
       throw error
     } else {
-      if(pengaduan.user._id == req.user._id) {
+      if(req.user.role === 'admin') {
+        next()
+      } else if(pengaduan.user._id == req.user._id) {
         next()
       } else{
         const error = {name: 'UnauthorizeError'}

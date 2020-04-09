@@ -18,6 +18,11 @@ module.exports = (err, req, res, next) => {
         error.message = 'Only admin can change!'
         throw error
 
+      case 'NotUser':
+        error.statusCode = 400
+        error.message = 'Only user can change!'
+        throw error
+
       case 'NotFoundError':
         error.statusCode = 404
         error.message = 'Data not found!'
