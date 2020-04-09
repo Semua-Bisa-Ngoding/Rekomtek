@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { generateHash } = require('../helpers/bcrypt')
 
 const UserSchema = new Schema({
   nama: {
@@ -26,7 +27,12 @@ const UserSchema = new Schema({
     type: String,
     enum: ['admin', 'user'],
     required: true
-  },
+  }
+})
+
+UserSchema.pre('save', next => {
+  this.password = generateHash(this.password)
+  next()
 })
 
 module.exports = mongoose.model('User', UserSchema)
