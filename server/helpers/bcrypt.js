@@ -3,6 +3,7 @@ const salt = 10
 
 module.exports = {
   generateHash(password) {
+    console.log(password, '<<<')
     return bcrypt.hashSync(password, salt)
   },
 

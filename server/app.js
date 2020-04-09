@@ -25,7 +25,7 @@ mongoose.connect(mongodb + dbName, {
   })
 
 app
-  .use(cors)
+  .use(cors())
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
   .use('/', router)

@@ -30,7 +30,7 @@ const UserSchema = new Schema({
   }
 })
 
-UserSchema.pre('save', next => {
+UserSchema.pre('save', function(next) {
   this.password = generateHash(this.password)
   next()
 })

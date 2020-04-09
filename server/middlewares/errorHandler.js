@@ -1,4 +1,5 @@
 module.exports = (err, req, res, next) => {
+  console.log(err, 'error nih')
   try {
     let error = new Error
     switch (err.name) {
