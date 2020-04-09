@@ -30,6 +30,8 @@ const PermohonanSchema = new Schema({
   tipe: String,
   jadwal: String,
   metode: String
+}, {
+  timestamps: true
 })
 
 module.exports = mongoose.model('Permohonan', PermohonanSchema)

@@ -6,8 +6,10 @@ const permohonanRouter = require('./permohonanRouter')
 const authentication = require('../middlewares/authentication')
 
 router.use('/user', userRouter)
-router.use(authentication)
-router.use('/pengaduan', pengaduanRouter)
 router.use('/permohonan', permohonanRouter)
+
+router.use(authentication)
+
+router.use('/pengaduan', pengaduanRouter)
 
 module.exports = router
